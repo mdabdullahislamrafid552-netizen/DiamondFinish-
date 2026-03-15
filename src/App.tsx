@@ -21,8 +21,7 @@ const Navbar = () => {
 
   return (
     <nav 
-      className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-[#212121]/95 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}
-      style={{ height: '148px' }}
+      className={`fixed w-full z-50 transition-all duration-300 h-20 md:h-[148px] ${scrolled ? 'bg-[#212121]/95 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
         <div className="flex justify-between items-center h-full">
@@ -30,7 +29,7 @@ const Navbar = () => {
             <img 
               src="https://i.imgur.com/0v09I6a.png" 
               alt="DiamondFinish Auto" 
-              className="w-[112px] h-[100px] object-contain brightness-0 invert"
+              className="w-[80px] h-[70px] md:w-[112px] md:h-[100px] object-contain brightness-0 invert transition-all duration-300"
             />
           </a>
           
@@ -101,7 +100,7 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-[#212121]/60 via-[#212121]/40 to-[#212121]"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 text-left mt-40">
+      <div className="relative z-10 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 text-left mt-24 md:mt-40">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -112,14 +111,14 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-[#ffffff] tracking-tighter mb-6 leading-[1.05]"
+            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold text-[#ffffff] tracking-tighter mb-4 md:mb-6 leading-[1.1] md:leading-[1.05]"
           >
             Professional <br className="hidden md:block" /> Car Detailing.
             <motion.span 
               initial={{ opacity: 0, filter: "blur(10px)" }}
               animate={{ opacity: 1, filter: "blur(0px)" }}
               transition={{ duration: 1, delay: 0.6 }}
-              className="font-light text-gray-400 text-3xl md:text-5xl lg:text-6xl block mt-4 tracking-tight"
+              className="font-light text-gray-400 text-2xl sm:text-3xl md:text-5xl lg:text-6xl block mt-2 md:mt-4 tracking-tight"
             >
               Brings Your Vehicle Back to Life.
             </motion.span>
@@ -129,7 +128,7 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="text-lg md:text-2xl text-gray-300 mb-10 max-w-3xl font-light leading-relaxed"
+            className="text-base sm:text-lg md:text-2xl text-gray-300 mb-8 md:mb-10 max-w-3xl font-light leading-relaxed"
           >
             Premium detailing services tailored for absolute perfection. <br className="hidden md:block" />
             <span className="font-medium text-white border-b border-white/30 pb-1">DM us your vehicle's year & model for an instant quote.</span>
@@ -139,23 +138,23 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1 }}
-            className="flex flex-col items-start justify-start gap-4"
+            className="flex flex-col items-start justify-start gap-4 w-full sm:w-auto"
           >
             <a 
               href="#contact" 
-              className="group relative inline-flex items-center justify-center gap-2 bg-[#ffffff] text-[#212121] px-10 py-4 rounded text-lg font-bold uppercase tracking-wider overflow-hidden transition-all hover:scale-105 shadow-[0_0_40px_rgba(255,255,255,0.1)] hover:shadow-[0_0_60px_rgba(255,255,255,0.2)]"
+              className="group relative inline-flex items-center justify-center gap-2 bg-[#ffffff] text-[#212121] px-8 py-3 md:px-10 md:py-4 rounded text-base md:text-lg font-bold uppercase tracking-wider overflow-hidden transition-all hover:scale-105 shadow-[0_0_40px_rgba(255,255,255,0.1)] hover:shadow-[0_0_60px_rgba(255,255,255,0.2)] w-full sm:w-auto text-center"
             >
               <span className="absolute inset-0 w-full h-full bg-white/20 group-hover:bg-transparent transition-colors"></span>
               Get a Quote
               <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
-            <p className="text-sm text-gray-400 mt-3 font-light tracking-wide flex items-center gap-2">
+            <p className="text-sm text-gray-400 mt-2 md:mt-3 font-light tracking-wide flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
               Fast responses • Easy booking
             </p>
           </motion.div>
 
-          <div className="mt-16 flex items-center justify-start gap-2 text-gray-400 opacity-80">
+          <div className="mt-12 md:mt-16 flex items-center justify-start gap-2 text-gray-400 opacity-80">
             <MapPin className="w-5 h-5" />
             <span className="text-sm font-medium tracking-[0.15em] uppercase">Serving Toronto & the GTA</span>
           </div>
@@ -204,27 +203,27 @@ const AnimatedCounter = ({ value, label, suffix = "" }: { value: number, label: 
 
 const About = () => {
   return (
-    <section id="about" className="py-24 bg-[#ffffff] text-[#212121] overflow-hidden">
+    <section id="about" className="py-16 md:py-24 bg-[#ffffff] text-[#212121] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 md:gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 tracking-tight">
               Professional Auto Detailing in Toronto
             </h2>
-            <div className="w-24 h-1 bg-[#212121] mb-8"></div>
-            <p className="text-lg md:text-xl text-gray-700 mb-6 leading-relaxed font-light">
+            <div className="w-16 md:w-24 h-1 bg-[#212121] mb-6 md:mb-8"></div>
+            <p className="text-base md:text-xl text-gray-700 mb-4 md:mb-6 leading-relaxed font-light">
               At DiamondFinish Auto, we specialize in high-quality car detailing designed to restore and protect your vehicle’s appearance. Our professional detailing process focuses on precision, premium products, and expert techniques to ensure every vehicle leaves looking its absolute best.
             </p>
-            <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-light mb-12">
+            <p className="text-base md:text-xl text-gray-700 leading-relaxed font-light mb-8 md:mb-12">
               Serving Toronto and the Greater Toronto Area, we are committed to providing exceptional results that exceed customer expectations.
             </p>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-8 pt-8 border-t border-gray-100">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 pt-6 md:pt-8 border-t border-gray-100">
               <AnimatedCounter value={5} label="Years Experience" suffix="+" />
               <AnimatedCounter value={1500} label="Vehicles Detailed" suffix="+" />
               <AnimatedCounter value={100} label="Satisfied Clients" suffix="%" />
@@ -276,14 +275,14 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-24 bg-[#212121] text-[#ffffff]">
+    <section id="services" className="py-16 md:py-24 bg-[#212121] text-[#ffffff]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">Our Services</h2>
-          <div className="w-24 h-1 bg-[#ffffff] mx-auto"></div>
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 tracking-tight">Our Services</h2>
+          <div className="w-16 md:w-24 h-1 bg-[#ffffff] mx-auto"></div>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
           {services.map((service, idx) => (
             <motion.div 
               key={idx}
@@ -291,7 +290,7 @@ const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="bg-[#2a2a2a] p-10 rounded-lg border border-white/5 hover:border-white/20 transition-colors group"
+              className="bg-[#2a2a2a] p-8 md:p-10 rounded-lg border border-white/5 hover:border-white/20 transition-colors group"
             >
               <div className="w-16 h-16 bg-[#ffffff] rounded-full flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
                 <service.icon className="w-8 h-8 text-[#212121]" />
@@ -327,11 +326,11 @@ const Portfolio = () => {
   ];
 
   return (
-    <section id="portfolio" className="py-24 bg-[#ffffff] text-[#212121]">
+    <section id="portfolio" className="py-16 md:py-24 bg-[#ffffff] text-[#212121]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">Work Gallery</h2>
-          <div className="w-24 h-1 bg-[#212121] mx-auto"></div>
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 tracking-tight">Work Gallery</h2>
+          <div className="w-16 md:w-24 h-1 bg-[#212121] mx-auto"></div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -376,14 +375,14 @@ const Testimonials = () => {
   ];
 
   return (
-    <section id="testimonials" className="py-24 bg-[#212121] text-[#ffffff]">
+    <section id="testimonials" className="py-16 md:py-24 bg-[#212121] text-[#ffffff]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">Client Testimonials</h2>
-          <div className="w-24 h-1 bg-[#ffffff] mx-auto"></div>
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 tracking-tight">Client Testimonials</h2>
+          <div className="w-16 md:w-24 h-1 bg-[#ffffff] mx-auto"></div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-6 md:gap-8">
           {reviews.map((review, idx) => (
             <motion.div
               key={idx}
@@ -391,7 +390,7 @@ const Testimonials = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="bg-[#2a2a2a] p-10 rounded-lg relative"
+              className="bg-[#2a2a2a] p-8 md:p-10 rounded-lg relative"
             >
               <Quote className="w-10 h-10 text-gray-600 absolute top-6 right-6 opacity-50" />
               <p className="text-gray-300 mb-8 font-light leading-relaxed relative z-10">"{review.text}"</p>
@@ -434,11 +433,11 @@ const FAQ = () => {
   ];
 
   return (
-    <section id="faq" className="py-24 bg-[#ffffff] text-[#212121]">
+    <section id="faq" className="py-16 md:py-24 bg-[#ffffff] text-[#212121]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">Frequently Asked Questions</h2>
-          <div className="w-24 h-1 bg-[#212121] mx-auto"></div>
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 tracking-tight">Frequently Asked Questions</h2>
+          <div className="w-16 md:w-24 h-1 bg-[#212121] mx-auto"></div>
         </div>
 
         <div className="space-y-4">
@@ -453,9 +452,9 @@ const FAQ = () => {
             >
               <button
                 onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
-                className="w-full flex items-center justify-between p-6 text-left bg-gray-50 hover:bg-gray-100 transition-colors"
+                className="w-full flex items-center justify-between p-5 md:p-6 text-left bg-gray-50 hover:bg-gray-100 transition-colors"
               >
-                <span className="font-bold text-lg">{faq.question}</span>
+                <span className="font-bold text-base md:text-lg pr-4">{faq.question}</span>
                 {openIndex === idx ? (
                   <Minus className="w-5 h-5 text-gray-500 flex-shrink-0" />
                 ) : (
@@ -500,14 +499,14 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-[#ffffff] text-[#212121]">
+    <section id="contact" className="py-16 md:py-24 bg-[#ffffff] text-[#212121]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16">
+        <div className="grid lg:grid-cols-2 gap-10 md:gap-16">
           <div>
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">Request a Quote</h2>
-            <div className="w-24 h-1 bg-[#212121] mb-8"></div>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 tracking-tight">Request a Quote</h2>
+            <div className="w-16 md:w-24 h-1 bg-[#212121] mb-6 md:mb-8"></div>
             
-            <p className="text-xl text-gray-700 mb-8 font-light">
+            <p className="text-lg md:text-xl text-gray-700 mb-6 md:mb-8 font-light">
               DM Your Vehicle’s Year & Model for a Free Quote
             </p>
 
@@ -515,14 +514,14 @@ const Contact = () => {
               href="https://www.instagram.com/diamondfinish_auto/" 
               target="_blank" 
               rel="noreferrer" 
-              className="inline-flex items-center gap-3 text-lg font-bold hover:text-gray-600 transition-colors mb-12"
+              className="inline-flex items-center gap-3 text-lg font-bold hover:text-gray-600 transition-colors mb-10 md:mb-12"
             >
               <Instagram className="w-6 h-6" />
               @diamondfinish_auto
             </a>
 
-            <div className="bg-gray-50 p-8 rounded-lg border border-gray-100">
-              <h3 className="font-bold text-lg mb-4">Why Choose Us?</h3>
+            <div className="bg-gray-50 p-6 md:p-8 rounded-lg border border-gray-100">
+              <h3 className="font-bold text-lg mb-3 md:mb-4">Why Choose Us?</h3>
               <p className="text-gray-600 font-light leading-relaxed text-sm">
                 Book professional interior detailing, exterior detailing, and paint correction services in Toronto and the GTA. DiamondFinish Auto is your trusted partner for premium car care. We guarantee a showroom finish every time.
               </p>
@@ -534,7 +533,7 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-[#212121] p-10 rounded-lg text-[#ffffff]"
+            className="bg-[#212121] p-6 sm:p-8 md:p-10 rounded-lg text-[#ffffff]"
           >
             <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
